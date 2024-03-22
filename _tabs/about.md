@@ -17,4 +17,3 @@ order: 4
 - [TryHackMe - Lazy Admin Walkthrough](https://medium.com/@sairajbarve/tryhackme-lazyadmin-walkthrough-89de6a1ec5c2)
 - [PEH Capstone - BlackPearl](https://medium.com/@sairajbarve/peh-capstone-5-blackpearl-d5cd593fb876)
 
-➡️[more blog posts...]()
