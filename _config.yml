@@ -16,7 +16,7 @@ timezone: Asia/Calcutta
 
 title: 0xSairaj # the main title
 
-tagline: Peace comes from within! # it will display as the subtitle
+tagline: Breath, Hack, Report, Repeat! # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A space where I share ctf writeups, red team insights, and my journey through the world of hacking and cybersecurity.
