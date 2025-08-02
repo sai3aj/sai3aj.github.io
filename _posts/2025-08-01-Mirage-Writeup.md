@@ -4,6 +4,7 @@ date: 2025-07-26 00:00:00 +0000
 categories: [Writeup, HTB]
 tags: [active-directory, adcs-attack, nats, dns-poisining]     # TAG names should always be lowercase
 toc: false
+# image: https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/5c9c46ad001394e992f1c7b830ee77e5.png
 ---
 
 In this writeup, I’ll guide you through my approach to the Mirage machine on Hack The Box — a Windows-based Active Directory challenge that starts with no credentials.
