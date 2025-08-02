@@ -45,6 +45,20 @@ jobs:
           ruby-version: 3.3
           bundler-cache: true
 
+      - name: Add private post
+        run: |
+          mkdir -p _posts
+          echo "---" > _posts/2025-08-02-htb-active-box.md
+          echo "title: 'HTB Active Writeup'" >> _posts/2025-08-02-htb-active-box.md
+          echo "date: 2025-08-02" >> _posts/2025-08-02-htb-active-box.md
+          echo "categories: [htb, writeups]" >> _posts/2025-08-02-htb-active-box.md
+          echo "layout: post" >> _posts/2025-08-02-htb-active-box.md
+          echo "---" >> _posts/2025-08-02-htb-active-box.md
+          echo "" >> _posts/2025-08-02-htb-active-box.md
+          echo "_**Warning: This is a writeup for an active HTB box.**_" >> _posts/2025-08-02-htb-active-box.md
+          echo "" >> _posts/2025-08-02-htb-active-box.md
+          echo "This content will be removed once the machine is retired." >> _posts/2025-08-02-htb-active-box.md
+
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
