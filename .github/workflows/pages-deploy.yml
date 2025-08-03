@@ -46,7 +46,7 @@ jobs:
           bundler-cache: true
 
       - name: Clone private posts
-        run: git clone https://x-access-token:${{ secrets.PRIVATE_POSTS_TOKEN }}@github.com/sai3aj/private-posts.git private-posts
+        run: git clone https://x-access-token:${{ secrets.PRIVATE_POSTS_TOKEN }}@github.com/sai3aj/private-posts.git mkdir private-posts
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_POSTS_TOKEN }}
 
