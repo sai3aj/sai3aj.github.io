@@ -46,9 +46,10 @@ jobs:
           bundler-cache: true
 
       - name: Clone Private Posts
-        run: git clone https://$PRIVATE_POSTS_TOKEN@github.com/sai3aj/private-posts.git private-posts
         env:
           PRIVATE_POSTS_TOKEN: ${{ secrets.PRIVATE_POSTS_TOKEN }}
+        run: |
+          git clone https://$PRIVATE_POSTS_TOKEN@github.com/sai3aj/private-posts.git private-posts
 
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
