@@ -45,11 +45,10 @@ jobs:
           ruby-version: 3.3
           bundler-cache: true
 
-      - name: Clone Private Posts
+      - name: Clone private posts
+        run: git clone https://x-access-token:${{ secrets.PRIVATE_POSTS_TOKEN }}@github.com/sai3aj/private-posts.git private-posts
         env:
-          PRIVATE_POSTS_TOKEN: ${{ secrets.PRIVATE_POSTS_TOKEN }}
-        run: |
-          git clone https://$PRIVATE_POSTS_TOKEN@github.com/sai3aj/private-posts.git private-posts
+          GITHUB_TOKEN: ${{ secrets.PRIVATE_POSTS_TOKEN }}
 
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
