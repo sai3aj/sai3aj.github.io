@@ -48,7 +48,8 @@ jobs:
       - name: Clone private posts
         run: git clone https://x-access-token:${{ secrets.PRIVATE_POSTS_TOKEN }}@github.com/sai3aj/private-posts.git private-posts
         env:
-          GITHUB_TOKEN: ${{ secrets.PRIVATE_POSTS_TOKEN }}
+          GIT_ASKPASS: echo
+          GIT_TERMINAL_PROMPT: 0
 
       - name: Copy private posts into _posts
         run: cp private-posts/*.md _posts/
