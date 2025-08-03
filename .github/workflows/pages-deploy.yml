@@ -50,6 +50,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_POSTS_TOKEN }}
 
+      - name: Copy private posts into _posts
+        run: cp private-posts/*.md _posts/
+
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
