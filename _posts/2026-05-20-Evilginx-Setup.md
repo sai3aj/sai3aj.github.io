@@ -8,10 +8,6 @@ image: https://cdn.hashnode.com/uploads/covers/688272752e250133c03a93ef/1a55c704
 permalink: /posts/evilginx-setup        
 ---
 
-In this writeup, I’ll guide you through my approach to setting up an phishing simulation campaign using Evilginx in a controlled lab environment.
-
-The objective? Understand how adversary-in-the-middle phishing frameworks operate during authorized red-team engagements and security awareness exercises.
-
 Before using Evilginx, the following are required:
 
 1.  A public Ubuntu/Debian server that you can access via SSH.
