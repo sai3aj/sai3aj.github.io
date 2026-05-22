@@ -197,5 +197,3 @@ evil-ginx> sessions <id>
 ```
 
 > The email address, password, and session token associated with the target will be displayed properly in the console.
-
-With this, the setup, configuration, and monitoring process of Evilginx is complete. This lab demonstrates how modern adversary-in-the-middle phishing frameworks operate during authorized red-team engagements and security awareness simulations.
