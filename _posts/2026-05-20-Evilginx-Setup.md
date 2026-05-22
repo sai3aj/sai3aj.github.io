@@ -1,5 +1,5 @@
 ---
-title: Evilginx Phishing Setup
+title: Why MFA  Alone Isn’t Saving Organizations Anymore?
 date: 2026-05-20 00:00:00 +0000
 categories: [Writeup, Red-Team]
 tags: [phishing, evilginx, redteam]     # TAG names should always be lowercase
@@ -8,13 +8,15 @@ image: https://cdn.hashnode.com/uploads/covers/688272752e250133c03a93ef/1a55c704
 permalink: /posts/evilginx-setup        
 ---
 
-In this writeup, I’ll guide you through my approach to setting up an phishing simulation campaign using Evilginx in a controlled lab environment.
+In this write-up, I’ll walk you through my approach to setting up a phishing setup using Evilginx.
 
-The objective? Understand how adversary-in-the-middle phishing frameworks operate during authorized red-team engagements and security awareness exercises.
+The objective? To understand how to set up phishing attack environment that can capture authenticated sessions and bypass MFA protections in a controlled environment.
+
+![](https://cdn.hashnode.com/uploads/covers/688272752e250133c03a93ef/1a55c704-4612-4a0d-9dc2-38924158c06d.png align="center")
 
 Before using Evilginx, the following are required:
 
-1.  A public Ubuntu/Debian server that you can access via SSH.
+1.  A public Ubuntu/Debian cloud server (VPS) from providers like Amazon Web Services, Microsoft, or DigitalOcean with SSH access enabled.
     
 2.  A purchased domain name.
     
@@ -168,9 +170,19 @@ Response(Phishing link will be generated):
 https://<domain.com>/random_string
 ```
 
-> Once the link is generated, it can be used as part of the authorized phishing simulation campaign.
+> Once the link is generated, it can be used to distribute phishing links to the targeted users.
 
-This command can be used to monitor whether any credentials or session tokens have been captured during the phishing campaign:
+After visiting the phishing link, we can see that a Microsoft login portal has been hosted:
+
+![](https://cdn.hashnode.com/uploads/covers/688272752e250133c03a93ef/e7fbb3d1-f950-4de0-bddc-47f337e9f388.png align="center")
+
+> Evilginx acts as a reverse proxy between the victim and the legitimate Microsoft login portal. The victim interacts with what appears to be the real Microsoft authentication page, while Evilginx transparently relays the traffic to Microsoft in real time. This allows the attacker to capture authentication cookies or session tokens after successful login, potentially bypassing MFA protections tied only to the login step.
+
+After a successful login by the victim, the entered email address, password, and authenticated session token will be captured by the attacker.
+
+![](https://cdn.hashnode.com/uploads/covers/688272752e250133c03a93ef/a526d128-4cb3-4502-b153-e42f4813d8f2.png align="center")
+
+This command can be used to monitor whether any credentials or session tokens have been captured during the phishing attack:
 
 ```shell
 evil-ginx> sessions
